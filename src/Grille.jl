@@ -88,3 +88,32 @@ function voisin(g::Grill,co::Tuple{Int64,Int64})
 
 
 
+function poids(g::Grill,deuxieme::Tuple{Int64,Int64}) 
+
+
+	(yF,xF)=(deuxieme[1],deuxieme[2])
+
+	
+
+
+
+		if(g.tab[yF,xF].etat==N)
+			
+			return 1
+		#=elseif((g.tab[yD,xD].etat==N && g.tab[yF,xF].etat==P) || (g.tab[yD,xD].etat==P && g.tab[yF,xF].etat==N))
+
+			
+			return g.CT=#
+
+		elseif(g.tab[yF,xF].etat==P)
+			#println("b")
+			return 8
+		elseif(g.tab[yF,xF].etat==PP)
+			#println("b")
+			return 5
+
+		end
+	#=else
+		#lever exception
+	end=#
+end
