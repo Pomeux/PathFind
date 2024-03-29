@@ -13,15 +13,15 @@ include("WA.jl")
 #main((226,437),(189,193),1)
 
 
-#D:(189,193) A:(226,437)
+#D:(93,133) A:(453,411)
 
 using Images,ImageView
 
 function main()
-
+	
 	println("Bienvenue dans le programme de pathfind\nMettez le chemin accès du fichier")
 
-#=
+
 
 	chemin::String=demanderfichierCorrecte()
 
@@ -36,12 +36,9 @@ function main()
 	println("mettez les coordonnées de la fin")
 
 	(yF,xF)=demanderTuple((ligne,colonne))
-	=#
+	
+	
 
-	chemin="theglaive.map"
-	(yD,xD)=(189,193)
-	(yF,xF)=(226,437)
-	(ligne,colonne)=(512,512)
 	color::Matrix{RGB{Float64}}=Matrix{RGB{Float64}}(undef,ligne,colonne)
 
 	tab::Matrix{Case}=Matrix{Case}(undef,ligne,colonne)
@@ -56,11 +53,7 @@ function main()
 
 
 	if(choix==1)
-		
-
-		
-
-		
+				
 
 		che=fillflood(g)
 
@@ -100,7 +93,10 @@ function main()
 		return (che.longueur,che.state)
 
 	elseif(choix==4)
-		che=wa(g,100)
+
+		println("Mettez w*")
+		w::Int64=demanderCo(typemax(Int64))
+		che=wa(g,w)
 
 		afficherChemin(color,che)
 
@@ -282,7 +278,7 @@ function matrixCaseAndColor(tab::Matrix{Char},bloque::Bool)
 
 				case[i,j]=Case(B,false,false)
 
-				
+							
 				#bloque
 				
 			elseif tab[i,j]=='@'
@@ -290,7 +286,10 @@ function matrixCaseAndColor(tab::Matrix{Char},bloque::Bool)
 				case[i,j]=Case(B,false,false)
 				#pena
 				
-
+			else 
+				color[i,j]=RGB(1.0,1.0,1.0)
+				case[i,j]=Case(N,false,false)
+				#normal
 			end
 
 
