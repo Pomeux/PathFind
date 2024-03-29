@@ -109,39 +109,9 @@ end
 
 
 
-debut=(3,2)
-fin=(1,2)
-tabb=[
-['p','l','l','l'],
-['p','b','b','l'],
-['l','l','l','l'],
-
-
-]
-
-tab::Matrix{Case}=Matrix{Case}(undef,3,4)
 
 
 
-for i in 1:3
-	for j in 1:4
-		if(tabb[i][j]=='p')
-			tab[i,j]=Case(P,false,false)
-		elseif(tabb[i][j]=='l')
-			tab[i,j]=Case(N,false,false)
-		elseif(tabb[i][j]=='b')
-
-			tab[i,j]=Case(B,false,false)
-		end
-	end
-end
-
-g=Grill(tab,debut,fin,0,0,0,0,0)
-
-fillflood(g)
-
-
-#problème c'est tous les même b comment les différencié? 
 
 
 
