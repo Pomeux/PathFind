@@ -44,15 +44,28 @@ Téléchargé les fichiers sources et mettre ça dans un répertoire.
 cd src
 ```
 
-Ouvrir une fenêtre de commande et ouvrir julia
-```sh
-julia
-```
-
 Puis 
 ```sh
 include("main.jl")
 ```
+
+## Précision fichiers
+
+Les fichiers .map doit être du format 
+-ligne 1 
+-height ligne
+-width colonne
+-ligne 4
+-contenant
+
+Puis ils les caratères
+- W correspond à une case de penalité de 8
+- . correspond à une case normal de 1
+- S correspond à une case penalité de 5
+- T correspond à une case bloquante
+- @ correspond à une case bloquante
+
+Le reste sont des caises normals de 1
 
 
 
