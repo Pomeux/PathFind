@@ -67,7 +67,9 @@ Puis ils les caratères
 
 Le reste sont des caises normals de 1
 
+## Précision utilisation
 
+Les programmes ne sont pas fait quand il n'existe pas de chemin. Celui-ci rend soit rien, soit un chemin quelconque
 
 
 
